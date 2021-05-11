@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		538226718239D470DAB9CFBA /* Pods_EagleBuddies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5F88781F8A39A28710B304C /* Pods_EagleBuddies.framework */; };
+		7902E1232649E674007C55A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7902E1222649E674007C55A7 /* AppDelegate.swift */; };
+		7902E1252649E674007C55A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7902E1242649E674007C55A7 /* SceneDelegate.swift */; };
+		7902E1272649E674007C55A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7902E1262649E674007C55A7 /* LoginViewController.swift */; };
+		7902E12A2649E674007C55A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7902E1282649E674007C55A7 /* Main.storyboard */; };
+		7902E12C2649E677007C55A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7902E12B2649E677007C55A7 /* Assets.xcassets */; };
+		7902E12F2649E677007C55A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7902E12D2649E677007C55A7 /* LaunchScreen.storyboard */; };
+		7902E13D2649EE21007C55A7 /* BuddyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7902E13C2649EE21007C55A7 /* BuddyDetailViewController.swift */; };
+		7902E13F2649FCC5007C55A7 /* BuddyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7902E13E2649FCC5007C55A7 /* BuddyListViewController.swift */; };
+		7902E141264A0E51007C55A7 /* NewBuddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7902E140264A0E51007C55A7 /* NewBuddyViewController.swift */; };
+		7902E143264AED0F007C55A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7902E142264AED0E007C55A7 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		239FAAD74E9A48AAFC80867C /* Pods-EagleBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleBuddy.debug.xcconfig"; path = "Target Support Files/Pods-EagleBuddy/Pods-EagleBuddy.debug.xcconfig"; sourceTree = "<group>"; };
+		53A472569C7FC136279719B5 /* Pods-EagleBuddies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleBuddies.release.xcconfig"; path = "Target Support Files/Pods-EagleBuddies/Pods-EagleBuddies.release.xcconfig"; sourceTree = "<group>"; };
+		7902E11F2649E674007C55A7 /* EagleBuddies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EagleBuddies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7902E1222649E674007C55A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7902E1242649E674007C55A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7902E1262649E674007C55A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7902E1292649E674007C55A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7902E12B2649E677007C55A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7902E12E2649E677007C55A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7902E1302649E677007C55A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7902E13C2649EE21007C55A7 /* BuddyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyDetailViewController.swift; sourceTree = "<group>"; };
+		7902E13E2649FCC5007C55A7 /* BuddyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyListViewController.swift; sourceTree = "<group>"; };
+		7902E140264A0E51007C55A7 /* NewBuddyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBuddyViewController.swift; sourceTree = "<group>"; };
+		7902E142264AED0E007C55A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8324C305D847955C1D5062D8 /* Pods-EagleBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleBuddy.release.xcconfig"; path = "Target Support Files/Pods-EagleBuddy/Pods-EagleBuddy.release.xcconfig"; sourceTree = "<group>"; };
+		F5F88781F8A39A28710B304C /* Pods_EagleBuddies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EagleBuddies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD93F7DF2B9814469CC6BF5C /* Pods-EagleBuddies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleBuddies.debug.xcconfig"; path = "Target Support Files/Pods-EagleBuddies/Pods-EagleBuddies.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7902E11C2649E674007C55A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				538226718239D470DAB9CFBA /* Pods_EagleBuddies.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E06D93B1D75C7B437B35EEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5F88781F8A39A28710B304C /* Pods_EagleBuddies.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		379BE2C71AD445AEA6DD2812 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				239FAAD74E9A48AAFC80867C /* Pods-EagleBuddy.debug.xcconfig */,
+				8324C305D847955C1D5062D8 /* Pods-EagleBuddy.release.xcconfig */,
+				FD93F7DF2B9814469CC6BF5C /* Pods-EagleBuddies.debug.xcconfig */,
+				53A472569C7FC136279719B5 /* Pods-EagleBuddies.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7902E1162649E674007C55A7 = {
+			isa = PBXGroup;
+			children = (
+				7902E1212649E674007C55A7 /* EagleBuddies */,
+				7902E1202649E674007C55A7 /* Products */,
+				379BE2C71AD445AEA6DD2812 /* Pods */,
+				2E06D93B1D75C7B437B35EEB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7902E1202649E674007C55A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7902E11F2649E674007C55A7 /* EagleBuddies.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7902E1212649E674007C55A7 /* EagleBuddies */ = {
+			isa = PBXGroup;
+			children = (
+				7902E1222649E674007C55A7 /* AppDelegate.swift */,
+				7902E1242649E674007C55A7 /* SceneDelegate.swift */,
+				7902E1262649E674007C55A7 /* LoginViewController.swift */,
+				7902E140264A0E51007C55A7 /* NewBuddyViewController.swift */,
+				7902E13E2649FCC5007C55A7 /* BuddyListViewController.swift */,
+				7902E13C2649EE21007C55A7 /* BuddyDetailViewController.swift */,
+				7902E1282649E674007C55A7 /* Main.storyboard */,
+				7902E12B2649E677007C55A7 /* Assets.xcassets */,
+				7902E12D2649E677007C55A7 /* LaunchScreen.storyboard */,
+				7902E1302649E677007C55A7 /* Info.plist */,
+				7902E142264AED0E007C55A7 /* GoogleService-Info.plist */,
+			);
+			path = EagleBuddies;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7902E11E2649E674007C55A7 /* EagleBuddies */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7902E1332649E677007C55A7 /* Build configuration list for PBXNativeTarget "EagleBuddies" */;
+			buildPhases = (
+				667AB13FEB5097BDF1EA32E3 /* [CP] Check Pods Manifest.lock */,
+				7902E11B2649E674007C55A7 /* Sources */,
+				7902E11C2649E674007C55A7 /* Frameworks */,
+				7902E11D2649E674007C55A7 /* Resources */,
+				EF8CF1396361F322AC55BC8A /* [CP] Embed Pods Frameworks */,
+				B19ACA6CB3C8AFAC69F9FEBF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EagleBuddies;
+			productName = EagleBuddy;
+			productReference = 7902E11F2649E674007C55A7 /* EagleBuddies.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7902E1172649E674007C55A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					7902E11E2649E674007C55A7 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 7902E11A2649E674007C55A7 /* Build configuration list for PBXProject "EagleBuddies" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7902E1162649E674007C55A7;
+			productRefGroup = 7902E1202649E674007C55A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7902E11E2649E674007C55A7 /* EagleBuddies */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7902E11D2649E674007C55A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7902E12F2649E677007C55A7 /* LaunchScreen.storyboard in Resources */,
+				7902E143264AED0F007C55A7 /* GoogleService-Info.plist in Resources */,
+				7902E12C2649E677007C55A7 /* Assets.xcassets in Resources */,
+				7902E12A2649E674007C55A7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		667AB13FEB5097BDF1EA32E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EagleBuddies-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B19ACA6CB3C8AFAC69F9FEBF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EagleBuddies/Pods-EagleBuddies-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EagleBuddies/Pods-EagleBuddies-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EagleBuddies/Pods-EagleBuddies-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF8CF1396361F322AC55BC8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EagleBuddies/Pods-EagleBuddies-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EagleBuddies/Pods-EagleBuddies-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EagleBuddies/Pods-EagleBuddies-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7902E11B2649E674007C55A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7902E1272649E674007C55A7 /* LoginViewController.swift in Sources */,
+				7902E1232649E674007C55A7 /* AppDelegate.swift in Sources */,
+				7902E13D2649EE21007C55A7 /* BuddyDetailViewController.swift in Sources */,
+				7902E13F2649FCC5007C55A7 /* BuddyListViewController.swift in Sources */,
+				7902E141264A0E51007C55A7 /* NewBuddyViewController.swift in Sources */,
+				7902E1252649E674007C55A7 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7902E1282649E674007C55A7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7902E1292649E674007C55A7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7902E12D2649E677007C55A7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7902E12E2649E677007C55A7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7902E1312649E677007C55A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7902E1322649E677007C55A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7902E1342649E677007C55A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD93F7DF2B9814469CC6BF5C /* Pods-EagleBuddies.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LV2TK5F234;
+				INFOPLIST_FILE = "$(SRCROOT)/EagleBuddies/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Louise-Kim.EagleBuddy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7902E1352649E677007C55A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53A472569C7FC136279719B5 /* Pods-EagleBuddies.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LV2TK5F234;
+				INFOPLIST_FILE = "$(SRCROOT)/EagleBuddies/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Louise-Kim.EagleBuddy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7902E11A2649E674007C55A7 /* Build configuration list for PBXProject "EagleBuddies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7902E1312649E677007C55A7 /* Debug */,
+				7902E1322649E677007C55A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7902E1332649E677007C55A7 /* Build configuration list for PBXNativeTarget "EagleBuddies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7902E1342649E677007C55A7 /* Debug */,
+				7902E1352649E677007C55A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7902E1172649E674007C55A7 /* Project object */;
+}
