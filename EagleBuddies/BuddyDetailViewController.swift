@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Contacts
+import GooglePlaces
+import MapKit
 
 class BuddyDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
@@ -14,16 +17,31 @@ class BuddyDetailViewController: UIViewController {
     @IBOutlet weak var yearTextField: UITextField!
     @IBOutlet weak var memberTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var followButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var messageButton: UIButton!
+    @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
+    @IBOutlet weak var saveBarButton: UIBarButtonItem!
     
     var buddy: Buddy!
+    var comments: Comments!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         if buddy == nil {
             buddy = Buddy()
         }
+        comments = Comments()
+        updateUserInterface()
     }
     
     func updateUserInterface() {
@@ -39,6 +57,46 @@ class BuddyDetailViewController: UIViewController {
         buddy.members = memberTextField.text ?? ""
         buddy.description = descriptionTextView.text ?? ""
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        updateFromInterface()
+        switch segue.identifier ?? "" {
+        case "AddComment":
+            let navigationController = segue.destination as! UINavigationController
+            let destination = navigationController.viewControllers.first as!
+                CommentTableViewController
+            destination.buddy = buddy
+        case "ShowReview":
+            let destination = segue.destination as! CommentTableViewController
+            let selectedIndexPath = tableView.indexPathForSelectedRow!
+            destination.comment = comments.commentArray[selectedIndexPath.row]
+            destination.buddy = buddy
+        default:
+            print("Couldn't find a case for segue identifier \(segue.identifier). This should not have happened!")
+        }
+    }
+    
+    func saveCancelAlert(title: String, message: String, segueIdentifier: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default) { (_) in
+            self.buddy.saveData { (success) in
+                self.saveBarButton.title  = "Done"
+//                self.cancelBarButton.hide()
+                self.navigationController?.setToolbarHidden(true, animated: true)
+//                self.disableTextEditing()
+                if segueIdentifier ==  "AddReview" {
+                    self.performSegue(withIdentifier: segueIdentifier, sender: nil)
+                } else {
+//                    self.cameraOrLibraryAlert()
+                }
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
     
     func leaveViewController() {
         let isPresentingInAddMode = presentingViewController is UINavigationController
@@ -62,11 +120,27 @@ class BuddyDetailViewController: UIViewController {
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
-        let isPresentinginAddMode = presentingViewController is UINavigationController
-        if isPresentinginAddMode {
-            dismiss(animated: true, completion: nil)
+        leaveViewController()
+    }
+    
+    @IBAction func commentButtonPressed(_ sender: UIButton) {
+        if buddy.documentID == "" {
+            saveCancelAlert(title: "This group has not been saved", message: "You must save the group before you add a comment", segueIdentifier: "AddComment")
         } else {
-            navigationController?.popViewController(animated: true)
+            performSegue(withIdentifier: "AddComment", sender: nil)
+
         }
     }
 }
+
+extension BuddyDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return comments.commentArray.count 
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath)
+        return cell
+    }
+}
+
