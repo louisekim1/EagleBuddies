@@ -23,6 +23,8 @@ class BuddyListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navigationController?.setToolbarHidden(false, animated: true)
+
         buddies.loadData {
             self.sortBasedOnSegmentPressed()
             self.tableView.reloadData()

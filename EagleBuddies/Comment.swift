@@ -18,7 +18,7 @@ class Comment {
     var documentID: String
     
     var dictionary:  [String: Any] {
-        return ["commentTitle": commentTitle, "comment": comment, "wantToConnect": wantToConnect, "socialMediaHandle": socialMediaHandle, "reviewUserID": reviewUserID]
+        return ["commentTitle": commentTitle, "comment": comment, "wantToConnect": wantToConnect, "socialMediaHandle": socialMediaHandle, "reviewUserID": reviewUserID, "reviewUserEmail": reviewUserEmail]
     }
     
     init(commentTitle: String, comment: String, wantToConnect: String, socialMediaHandle: String, reviewUserID: String, reviewUserEmail: String, documentID: String) {
@@ -49,38 +49,29 @@ class Comment {
         self.init(commentTitle: commentTitle, comment: comment, wantToConnect: wantToConnect, socialMediaHandle: socialMediaHandle, reviewUserID: reviewUserID, reviewUserEmail: reviewUserEmail, documentID: documentID)
     }
     
-    func saveData(completion: @escaping (Bool) -> ()) {
+    func saveData(buddy: Buddy, completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
-        // Grab the user ID
-        guard let postingUserID = (Auth.auth().currentUser?.uid) else {
-            print("ERROR: Could not save data because we don't have a valid postingUserID")
-            return completion(false)
-        }
-        
-        func saveData(buddy: Buddy, completion: @escaping (Bool) -> ()) {
-            let db = Firestore.firestore()
-            // Create the dictionary representing data we want to save
-            let dataToSave: [String: Any] = self.dictionary
-            // if we HAVE saved a record, we'll have  an ID, otherwise  .addDocument will create one.
-            if self.documentID == "" { // Create a new document via .addDocument
-                var ref: DocumentReference? = nil // Firestore will create a new ID for us
-                ref = db.collection("buddies").document(buddy.documentID).collection("comments").addDocument(data: dataToSave){ (error) in
-                    guard error == nil else {
-                        print("ERROR: adding document \(error!.localizedDescription)")
-                        return completion(false)
-                    }
-                    self.documentID = ref!.documentID
-                    completion(true)
+        // Create the dictionary representing data we want to save
+        let dataToSave: [String: Any] = self.dictionary
+        // if we HAVE saved a record, we'll have  an ID, otherwise  .addDocument will create one.
+        if self.documentID == "" { // Create a new document via .addDocument
+            var ref: DocumentReference? = nil // Firestore will create a new ID for us
+            ref = db.collection("buddies").document(buddy.documentID).collection("comments").addDocument(data: dataToSave){ (error) in
+                guard error == nil else {
+                    print("ERROR: adding document \(error!.localizedDescription)")
+                    return completion(false)
                 }
-            } else { // else save to the existing documentID w/ .setData
-                let ref = db.collection("buddies").document(buddy.documentID).collection("comment").document(self.documentID)
-                ref.setData(dataToSave) { (error) in
-                    guard error == nil else {
-                        print("ERROR: updating document \(error!.localizedDescription)")
-                        return completion(false)
-                    }
-                    completion(true)
+                self.documentID = ref!.documentID
+                completion(true)
+            }
+        } else { // else save to the existing documentID w/ .setData
+            let ref = db.collection("buddies").document(buddy.documentID).collection("comment").document(self.documentID)
+            ref.setData(dataToSave) { (error) in
+                guard error == nil else {
+                    print("ERROR: updating document \(error!.localizedDescription)")
+                    return completion(false)
                 }
+                completion(true)
             }
         }
     }

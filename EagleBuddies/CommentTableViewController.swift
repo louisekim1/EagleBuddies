@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import Firebase
 
 class CommentTableViewController: UITableViewController {
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
-    @IBOutlet weak var saveBarButton: UIBarButtonItem!
     @IBOutlet weak var commentTitleField: UITextField!
     @IBOutlet weak var commentField: UITextField!
     @IBOutlet weak var wantToConnectField: UITextField!
     @IBOutlet weak var socialMediaField: UITextField!
+    @IBOutlet weak var postedByLabel: UILabel!
+    @IBOutlet weak var saveBarButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIButton!
     
     var comment: Comment!
@@ -28,7 +30,7 @@ class CommentTableViewController: UITableViewController {
         self.view.addGestureRecognizer(tap)
         
         guard buddy != nil else {
-            print("ERROR: No spot passed to CommentTableVIewController.swift")
+            print("ERROR: No commet passed to CommentTableVIewController.swift")
             return
         }
         if comment == nil {
@@ -42,6 +44,27 @@ class CommentTableViewController: UITableViewController {
         commentField.text = comment.comment
         wantToConnectField.text = comment.wantToConnect
         socialMediaField.text = comment.socialMediaHandle
+        if comment.documentID == "" { // this is a new review
+            addBordersToEditableObjects()
+        } else {
+            if comment.reviewUserID == Auth.auth().currentUser?.uid  { // review posted by current user
+                self.navigationItem.leftItemsSupplementBackButton = false
+                saveBarButton.title = "Update"
+                addBordersToEditableObjects()
+                deleteButton.isHidden = false
+            } else { // review posted by different user
+                saveBarButton.hide()
+                cancelBarButton.hide()
+                postedByLabel.text = "Posted by: \(comment.reviewUserEmail)"
+            }
+            commentTitleField.isEnabled = false
+            commentTitleField.borderStyle = .none
+            commentTitleField.isEnabled = false
+            wantToConnectField.isEnabled = false
+            socialMediaField.isEnabled = false
+            commentTitleField.backgroundColor = .white
+            commentField.backgroundColor = .white
+        }
     }
     
     func updateFromUserInterface() {
@@ -49,6 +72,13 @@ class CommentTableViewController: UITableViewController {
         comment.comment = commentField.text!
         comment.wantToConnect = wantToConnectField.text!
         comment.socialMediaHandle = socialMediaField.text!
+    }
+    
+    func addBordersToEditableObjects() {
+        commentTitleField.addBorder(width: 0.5, radius: 5.0, color: .black)
+        commentField.addBorder(width: 0.5, radius: 5.0, color: .black)
+        wantToConnectField.addBorder(width: 0.5, radius: 5.0, color: .black)
+        socialMediaField.addBorder(width: 0.5, radius: 5.0, color: .black)
     }
     
     func leaveViewController() {
@@ -86,9 +116,9 @@ class CommentTableViewController: UITableViewController {
         leaveViewController()
     }
     
-    @IBAction func saveButtonPressed(_ sender: Any) {
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         updateFromUserInterface()
-        buddy.saveData(buddy: buddy) { (success) in
+        comment.saveData(buddy: buddy) { (success) in
             if success {
                 self.leaveViewController()
             } else {
@@ -97,3 +127,4 @@ class CommentTableViewController: UITableViewController {
         }
     }
 }
+
