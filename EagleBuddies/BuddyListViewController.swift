@@ -15,7 +15,6 @@ class BuddyListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -32,6 +31,12 @@ extension BuddyListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.detailTextLabel?.text = grade[indexPath.row]
         return cell
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "ShowDetail" {
+//            let destination = segue.destination as! BuddyDetailViewController
+//            let selectedIndexPath = tableView.indexPathForSelectedRow!
+//            destination.buddy = buddies.buddyArray[selectedIndexPath.row]
+//        }
+//    }
 }
-
-
