@@ -34,6 +34,15 @@ class Buddy {
         self.init(name: "", grade: "", members: "", description: "", postingUserID: "", documentID: "")
     }
     
+    convenience init(dictionary: [String: Any]) {
+        let name = dictionary["name"] as! String? ?? ""
+        let grade = dictionary["grade"] as! String? ?? ""
+        let members = dictionary["members"] as! String? ?? ""
+        let description = dictionary["description"] as! String? ?? ""
+        let postingUserID = dictionary["postingUserID"] as! String? ?? ""
+        self.init(name: name, grade: grade, members: members, description: description, postingUserID: postingUserID, documentID: "")
+    }
+    
     func saveData(completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         // Grab the user ID

@@ -16,22 +16,22 @@ class Buddies {
         db = Firestore.firestore()
     }
     
-//    func loadData(completed: @escaping () ->  ()) {
-//        db.collection("buddies").addSnapshotListener { (querySnapshot, error) in
-//            guard error == nil else {
-//                print("ERROR: adding the snapshot listener \(error!.localizedDescription)")
-//            return completed()
-//            }
-//            self.buddyArray = [] // clean out existing spotArray since new data will load
-//            // there are querySnapshot!.documents.count documents in the snapshot
-//            for document in querySnapshot!.documents {
-//                // You'll have to make sure you have a dictionary initializer in the singular class
-//                let buddy = Buddy(dictionary: document.data())
-//                buddy.documentID = document.documentID
-//                self.buddyArray.append(buddy)
-//            }
-//            completed()
-//        }
-//    }
+    func loadData(completed: @escaping () ->  ()) {
+        db.collection("buddies").addSnapshotListener { (querySnapshot, error) in
+            guard error == nil else {
+                print("ERROR: adding the snapshot listener \(error!.localizedDescription)")
+            return completed()
+            }
+            self.buddyArray = [] // clean out existing spotArray since new data will load
+            // there are querySnapshot!.documents.count documents in the snapshot
+            for document in querySnapshot!.documents {
+                // You'll have to make sure you have a dictionary initializer in the singular class
+                let buddy = Buddy(dictionary: document.data())
+                buddy.documentID = document.documentID
+                self.buddyArray.append(buddy)
+            }
+            completed()
+        }
+    }
 }
 

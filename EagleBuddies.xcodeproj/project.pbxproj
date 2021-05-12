@@ -16,7 +16,6 @@
 		7902E12F2649E677007C55A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7902E12D2649E677007C55A7 /* LaunchScreen.storyboard */; };
 		7902E13D2649EE21007C55A7 /* BuddyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7902E13C2649EE21007C55A7 /* BuddyDetailViewController.swift */; };
 		7902E13F2649FCC5007C55A7 /* BuddyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7902E13E2649FCC5007C55A7 /* BuddyListViewController.swift */; };
-		7902E141264A0E51007C55A7 /* NewBuddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7902E140264A0E51007C55A7 /* NewBuddyViewController.swift */; };
 		7902E143264AED0F007C55A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7902E142264AED0E007C55A7 /* GoogleService-Info.plist */; };
 		79275429264B152D007F5EAD /* Buddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79275428264B152D007F5EAD /* Buddy.swift */; };
 		7927542B264B2B07007F5EAD /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7927542A264B2B07007F5EAD /* UIViewController+alert.swift */; };
@@ -36,7 +35,6 @@
 		7902E1302649E677007C55A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7902E13C2649EE21007C55A7 /* BuddyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyDetailViewController.swift; sourceTree = "<group>"; };
 		7902E13E2649FCC5007C55A7 /* BuddyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyListViewController.swift; sourceTree = "<group>"; };
-		7902E140264A0E51007C55A7 /* NewBuddyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBuddyViewController.swift; sourceTree = "<group>"; };
 		7902E142264AED0E007C55A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		79275428264B152D007F5EAD /* Buddy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buddy.swift; sourceTree = "<group>"; };
 		7927542A264B2B07007F5EAD /* UIViewController+alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 				79275428264B152D007F5EAD /* Buddy.swift */,
 				7927542C264B4743007F5EAD /* Buddies.swift */,
 				7902E1262649E674007C55A7 /* LoginViewController.swift */,
-				7902E140264A0E51007C55A7 /* NewBuddyViewController.swift */,
 				7902E13E2649FCC5007C55A7 /* BuddyListViewController.swift */,
 				7902E13C2649EE21007C55A7 /* BuddyDetailViewController.swift */,
 				7927542A264B2B07007F5EAD /* UIViewController+alert.swift */,
@@ -254,7 +251,6 @@
 				7902E13D2649EE21007C55A7 /* BuddyDetailViewController.swift in Sources */,
 				79275429264B152D007F5EAD /* Buddy.swift in Sources */,
 				7902E13F2649FCC5007C55A7 /* BuddyListViewController.swift in Sources */,
-				7902E141264A0E51007C55A7 /* NewBuddyViewController.swift in Sources */,
 				7902E1252649E674007C55A7 /* SceneDelegate.swift in Sources */,
 				7927542B264B2B07007F5EAD /* UIViewController+alert.swift in Sources */,
 				7927542D264B4743007F5EAD /* Buddies.swift in Sources */,
