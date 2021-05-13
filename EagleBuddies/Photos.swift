@@ -37,6 +37,5 @@ class Photos {
             completed()
         }
     }
-    
 }
 

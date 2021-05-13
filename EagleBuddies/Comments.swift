@@ -37,6 +37,5 @@ class Comments {
             completed()
         }
     }
-    
 }
 

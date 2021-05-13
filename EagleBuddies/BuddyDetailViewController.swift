@@ -66,7 +66,7 @@ class BuddyDetailViewController: UIViewController {
                 self.navigationItem.leftItemsSupplementBackButton = false
                 saveBarButton.title = "Update"
                 addBordersToEditableObjects()
-                //                deleteBarButton.isHidden = false
+                //     deleteBarButton.isHidden = false
             } else { // review posted by different user
                 saveBarButton.hide()
                 cancelBarButton.hide()
@@ -84,37 +84,16 @@ class BuddyDetailViewController: UIViewController {
             descriptionTextView.backgroundColor = .white
         }
     }
-    //    func updatePictures() {
-    //        if photo.documentID == "" { // This is a new photo
-    //            addBordersToEditableObjects()
-    //        } else {
-    //            if photo.photoUserID == Auth.auth().currentUser?.uid { // photo posted by current user
-    //                self.navigationItem.leftItemsSupplementBackButton = false
-    //                saveBarButton.title = "Update"
-    //                addBordersToEditableObjects()
-    //                self.navigationController?.setToolbarHidden(false, animated: true)
-    //            } else { // photo posted by different user
-    //                saveBarButton.hide()
-    //                cancelBarButton.hide()
-    //                descriptionTextView.isEditable = false
-    //                descriptionTextView.backgroundColor = .white
-    //            }
-    //        }
-    //        guard let url = URL(string: photo.photoURL) else {
-    //            // Then this must be a new image
-    //            photoImageView.image = photo.image
-    //            return
-    //        }
-    //        photoImageView.sd_imageTransition = .fade
-    //        photoImageView.sd_imageTransition?.duration = 0.5
-    //        photoImageView.sd_setImage(with: url)
-    //    }
     
     func updateFromInterface() {
         buddy.name = nameTextField.text ?? ""
         buddy.grade = yearTextField.text ?? ""
         buddy.members = memberTextField.text ?? ""
         buddy.description = descriptionTextView.text ?? ""
+    }
+    
+    func addBordersToEditableObjects() {
+        descriptionTextView.addBorder(width: 0.5, radius: 5.0, color: .black)
     }
     
     func disableTextEditing() {
@@ -131,35 +110,6 @@ class BuddyDetailViewController: UIViewController {
         memberTextField.borderStyle = .none
     }
     
-    func addBordersToEditableObjects() {
-        nameTextField.addBorder(width: 0.5, radius: 5.0, color: .black)
-        yearTextField.addBorder(width: 0.5, radius: 5.0, color: .black)
-        memberTextField.addBorder(width: 0.5, radius: 5.0, color: .black)
-        descriptionTextView.addBorder(width: 0.5, radius: 5.0, color: .black)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        updateFromInterface()
-        switch segue.identifier ?? "" {
-        case "AddComment":
-            let navigationController = segue.destination as! UINavigationController
-            let destination = navigationController.viewControllers.first as!
-                CommentTableViewController
-            destination.buddy = buddy
-        case "ShowReview":
-            let destination = segue.destination as! CommentTableViewController
-            let selectedIndexPath = tableView.indexPathForSelectedRow!
-            destination.comment = comments.commentArray[selectedIndexPath.row]
-            destination.buddy = buddy
-        case "AddPhoto":
-            let navigationController = segue.destination as! UINavigationController
-            let destination = navigationController.viewControllers.first as! PhotoViewController
-            destination.buddy = buddy
-        default:
-            print("Couldn't find a case for segue identifier \(segue.identifier). This should not have happened!")
-        }
-    }
-    
     func saveCancelAlert(title: String, message: String, segueIdentifier: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "Save", style: .default) { (_) in
@@ -171,7 +121,7 @@ class BuddyDetailViewController: UIViewController {
                 if segueIdentifier ==  "AddReview" {
                     self.performSegue(withIdentifier: segueIdentifier, sender: nil)
                 } else {
-                    //                    self.cameraOrLibraryAlert()
+                    // self.cameraOrLibraryAlert()
                 }
             }
         }
@@ -189,7 +139,6 @@ class BuddyDetailViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         }
     }
-    
     func cameraOrLibraryAlert() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
@@ -312,3 +261,29 @@ extension BuddyDetailViewController: UIImagePickerControllerDelegate, UINavigati
     }
 }
 
+
+//    func updatePictures() {
+//        if photo.documentID == "" { // This is a new photo
+//            addBordersToEditableObjects()
+//        } else {
+//            if photo.photoUserID == Auth.auth().currentUser?.uid { // photo posted by current user
+//                self.navigationItem.leftItemsSupplementBackButton = false
+//                saveBarButton.title = "Update"
+//                addBordersToEditableObjects()
+//                self.navigationController?.setToolbarHidden(false, animated: true)
+//            } else { // photo posted by different user
+//                saveBarButton.hide()
+//                cancelBarButton.hide()
+//                descriptionTextView.isEditable = false
+//                descriptionTextView.backgroundColor = .white
+//            }
+//        }
+//        guard let url = URL(string: photo.photoURL) else {
+//            // Then this must be a new image
+//            photoImageView.image = photo.image
+//            return
+//        }
+//        photoImageView.sd_imageTransition = .fade
+//        photoImageView.sd_imageTransition?.duration = 0.5
+//        photoImageView.sd_setImage(with: url)
+//    }

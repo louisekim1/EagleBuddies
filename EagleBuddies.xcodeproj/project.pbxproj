@@ -25,7 +25,6 @@
 		79275435264BAC77007F5EAD /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79275434264BAC77007F5EAD /* Comments.swift */; };
 		79275437264C60F9007F5EAD /* UIView+addBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79275436264C60F9007F5EAD /* UIView+addBorder.swift */; };
 		79275439264C6129007F5EAD /* UIBarButtonItem+hide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79275438264C6128007F5EAD /* UIBarButtonItem+hide.swift */; };
-		7927543B264C7B44007F5EAD /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7927543A264C7B44007F5EAD /* PhotoViewController.swift */; };
 		7927543D264C82AF007F5EAD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7927543C264C82AF007F5EAD /* Photo.swift */; };
 		7927543F264C8384007F5EAD /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7927543E264C8384007F5EAD /* Photos.swift */; };
 /* End PBXBuildFile section */
@@ -52,7 +51,6 @@
 		79275434264BAC77007F5EAD /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
 		79275436264C60F9007F5EAD /* UIView+addBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+addBorder.swift"; sourceTree = "<group>"; };
 		79275438264C6128007F5EAD /* UIBarButtonItem+hide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+hide.swift"; sourceTree = "<group>"; };
-		7927543A264C7B44007F5EAD /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		7927543C264C82AF007F5EAD /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		7927543E264C8384007F5EAD /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		8324C305D847955C1D5062D8 /* Pods-EagleBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleBuddy.release.xcconfig"; path = "Target Support Files/Pods-EagleBuddy/Pods-EagleBuddy.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				7902E12D2649E677007C55A7 /* LaunchScreen.storyboard */,
 				7902E1302649E677007C55A7 /* Info.plist */,
 				7902E142264AED0E007C55A7 /* GoogleService-Info.plist */,
-				7927543A264C7B44007F5EAD /* PhotoViewController.swift */,
 			);
 			path = EagleBuddies;
 			sourceTree = "<group>";
@@ -283,7 +280,6 @@
 				7927543D264C82AF007F5EAD /* Photo.swift in Sources */,
 				79275437264C60F9007F5EAD /* UIView+addBorder.swift in Sources */,
 				7902E1252649E674007C55A7 /* SceneDelegate.swift in Sources */,
-				7927543B264C7B44007F5EAD /* PhotoViewController.swift in Sources */,
 				7927542B264B2B07007F5EAD /* UIViewController+alert.swift in Sources */,
 				7927542D264B4743007F5EAD /* Buddies.swift in Sources */,
 			);

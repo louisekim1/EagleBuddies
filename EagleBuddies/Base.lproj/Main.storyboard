@@ -122,111 +122,6 @@
             </objects>
             <point key="canvasLocation" x="2690.1869158878503" y="52.483801295896335"/>
         </scene>
-        <!--New Buddy View Controller-->
-        <scene sceneID="nfE-fG-y3D">
-            <objects>
-                <viewController id="dmv-zk-yoc" customClass="NewBuddyViewController" customModule="EagleBuddies" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UFg-CP-HXc">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0B-hS-yxf">
-                                <rect key="frame" x="16" y="89" width="101" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B66-lM-eu9">
-                                <rect key="frame" x="16" y="118" width="288" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="groupNameTextField:" destination="d13-o6-2JM" eventType="editingDidEnd" id="JSd-v9-drD"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Grade(s):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLM-Of-y84">
-                                <rect key="frame" x="16" y="160" width="72" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sl8-hL-TOd">
-                                <rect key="frame" x="16" y="266" width="288" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="nameTextView:" destination="d13-o6-2JM" eventType="editingDidEnd" id="HCK-l7-czL"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Names of your friends:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kd2-0d-Igx">
-                                <rect key="frame" x="16" y="237" width="173" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nap-Ll-yLZ">
-                                <rect key="frame" x="16" y="347" width="288" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="descriptionTextField:" destination="d13-o6-2JM" eventType="editingDidEnd" id="LYJ-5c-xKQ"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tell us a little about you guys!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdQ-gH-F1a">
-                                <rect key="frame" x="16" y="318" width="224" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8nq-fN-K12">
-                                <rect key="frame" x="16" y="189" width="288" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="gradeTextField:" destination="d13-o6-2JM" eventType="editingDidEnd" id="Iyq-Lr-Xbt"/>
-                                </connections>
-                            </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p5G-p6-t5U">
-                                <rect key="frame" x="120" y="400" width="184" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="XFv-7e-tJe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="JVC-Yl-FKO">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="x7w-cX-U8J">
-                            <connections>
-                                <action selector="cancelButtonPressed:" destination="dmv-zk-yoc" id="IDv-vQ-agH"/>
-                                <segue destination="d13-o6-2JM" kind="unwind" unwindAction="unwindSignOutPressedWithSegue:" id="3fn-H7-cdM"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="79r-Wc-Vwy">
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="d13-o6-2JM" id="VMR-wu-d6F"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="descriptionTextField" destination="nap-Ll-yLZ" id="7EW-zZ-jBp"/>
-                        <outlet property="gradeTextField" destination="8nq-fN-K12" id="eEq-CH-6xr"/>
-                        <outlet property="memberNameTextField" destination="Sl8-hL-TOd" id="vtQ-8P-UgS"/>
-                        <outlet property="nameTextField" destination="B66-lM-eu9" id="9US-M5-uf3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hH1-y7-C9T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="d13-o6-2JM" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="6220.0934579439245" y="-585.09719222462206"/>
-        </scene>
         <!--Buddy Detail View Controller-->
         <scene sceneID="Gxj-jd-y4R">
             <objects>
@@ -461,39 +356,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="anC-ne-uqI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4375.2336448598126" y="50.53995680345573"/>
-        </scene>
-        <!--Photo View Controller-->
-        <scene sceneID="wk6-Us-w7L">
-            <objects>
-                <viewController id="UHU-UN-nu0" customClass="PhotoViewController" customModule="EagleBuddies" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ywL-g6-lup">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Ela-AT-JzB"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="3EA-5L-gBy"/>
-                        <barButtonItem systemItem="trash" id="lsX-6v-c3O">
-                            <connections>
-                                <action selector="deleteButtonPressed:" destination="UHU-UN-nu0" id="JfW-CF-ix1"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="clL-ha-tOS">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IZM-xu-9qK"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="ksq-c2-Da3"/>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <connections>
-                        <outlet property="cancelBarButton" destination="IZM-xu-9qK" id="IkS-uM-lkn"/>
-                        <outlet property="deleteBarButton" destination="lsX-6v-c3O" id="JvT-tR-aGa"/>
-                        <outlet property="saveBarButton" destination="ksq-c2-Da3" id="0Wg-eP-qlW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXy-g6-7dy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6132" y="754"/>
         </scene>
         <!--Comment Table View Controller-->
         <scene sceneID="ray-SA-VhM">
@@ -871,25 +733,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5I6-1H-fZZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5299" y="-388"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="yHU-Od-gxs">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hRu-kP-f1l" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JBS-VT-ffm">
-                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="Toolbar"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="UHU-UN-nu0" kind="relationship" relationship="rootViewController" id="kCG-Qt-TBJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PAr-jQ-X2v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4979" y="770"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
