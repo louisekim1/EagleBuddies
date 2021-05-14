@@ -56,7 +56,7 @@ class Buddy {
         // if we HAVE saved a record, we'll have  an ID, otherwise  .addDocument will create one.
         if self.documentID == "" { // Create a new document via .addDocument
             var ref: DocumentReference? = nil // Firestore will create a new ID for us
-            ref = db.collection("spots").addDocument(data: dataToSave){ (error) in
+            ref = db.collection("buddies").addDocument(data: dataToSave){ (error) in
                 guard error == nil else {
                     print("ERROR: adding document \(error!.localizedDescription)")
                     return completion(false)
@@ -66,7 +66,7 @@ class Buddy {
                 completion(true)
             }
         } else { // else save to the existing documentID w/ .setData
-            let ref = db.collection("spots").document(self.documentID)
+            let ref = db.collection("buddies").document(self.documentID)
             ref.setData(dataToSave) { (error) in
                 guard error == nil else {
                     print("ERROR: updating document \(error!.localizedDescription)")

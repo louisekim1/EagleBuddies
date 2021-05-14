@@ -21,7 +21,7 @@ class BuddyPhotoCollectionViewCell: UICollectionViewCell {
             } else {
                 print("URL didn't work \(self.photo.photoURL)")
                 self.photo.loadImage(buddy: self.buddy) { (success) in
-                    self.buddy.saveData(buddy: self.buddy) { (success) in
+                    self.photo.saveData(buddy: self.buddy) { (success) in
                         print("image updated with URL \(self.photo.photoURL)")
                     }
                 }

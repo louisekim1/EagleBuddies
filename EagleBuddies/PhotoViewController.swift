@@ -20,19 +20,16 @@ class PhotoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-    guard buddy != nil else {
-    print("ERROR: No review passed to PhotoViewController.swift")
-    return
+        
+        guard buddy != nil else {
+            print("ERROR: No photo passed to PhotoViewController.swift")
+            return
+        }
+        if photo == nil {
+            photo = Photo()
+        }
+        updateUserInterface()
     }
-    
-    if photo == nil {
-    photo = Photo()
-    }
-    
-    updateUserInterface()
-    
-}
     
     func updateUserInterface() {
         if photo.documentID == "" { // This is a new photo

@@ -102,7 +102,7 @@ class Photo {
     
     func loadImage(buddy: Buddy, completion: @escaping (Bool) -> ()) {
         guard buddy.documentID != "" else {
-            print("ERROR: did not pass a valid spot into lodaImage")
+            print("ERROR: did not pass a valid spot into loadImage")
             return
         }
         let storage = Storage.storage()

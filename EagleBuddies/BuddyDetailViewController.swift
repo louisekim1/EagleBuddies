@@ -11,15 +11,12 @@ import SDWebImage
 
 class BuddyDetailViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var photoCell: UICollectionViewCell!
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var yearTextField: UITextField!
     @IBOutlet weak var memberTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var messageButton: UIButton!
-    @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
@@ -52,6 +49,16 @@ class BuddyDetailViewController: UIViewController {
         comments = Comments()
         photos = Photos()
         updateUserInterface()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if buddy.documentID != "" {
+            self.navigationController?.setToolbarHidden(true, animated: true)
+        }
+        comments.loadData(buddy: buddy) {
+            self.tableView.reloadData()
+        }
     }
     
     func updateUserInterface() {
