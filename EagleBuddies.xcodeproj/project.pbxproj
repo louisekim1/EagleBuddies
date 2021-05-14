@@ -27,6 +27,8 @@
 		79275439264C6129007F5EAD /* UIBarButtonItem+hide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79275438264C6128007F5EAD /* UIBarButtonItem+hide.swift */; };
 		7927543D264C82AF007F5EAD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7927543C264C82AF007F5EAD /* Photo.swift */; };
 		7927543F264C8384007F5EAD /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7927543E264C8384007F5EAD /* Photos.swift */; };
+		79A690C4264DEBC90034CA28 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A690C3264DEBC90034CA28 /* PhotoViewController.swift */; };
+		79A690C6264DF3850034CA28 /* BuddyPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A690C5264DF3850034CA28 /* BuddyPhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		79275438264C6128007F5EAD /* UIBarButtonItem+hide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+hide.swift"; sourceTree = "<group>"; };
 		7927543C264C82AF007F5EAD /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		7927543E264C8384007F5EAD /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		79A690C3264DEBC90034CA28 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		79A690C5264DF3850034CA28 /* BuddyPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8324C305D847955C1D5062D8 /* Pods-EagleBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleBuddy.release.xcconfig"; path = "Target Support Files/Pods-EagleBuddy/Pods-EagleBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		F5F88781F8A39A28710B304C /* Pods_EagleBuddies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EagleBuddies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD93F7DF2B9814469CC6BF5C /* Pods-EagleBuddies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleBuddies.debug.xcconfig"; path = "Target Support Files/Pods-EagleBuddies/Pods-EagleBuddies.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,7 +125,9 @@
 				7902E1262649E674007C55A7 /* LoginViewController.swift */,
 				7902E13E2649FCC5007C55A7 /* BuddyListViewController.swift */,
 				7902E13C2649EE21007C55A7 /* BuddyDetailViewController.swift */,
+				79A690C5264DF3850034CA28 /* BuddyPhotoCollectionViewCell.swift */,
 				79275430264B9471007F5EAD /* CommentTableViewController.swift */,
+				79A690C3264DEBC90034CA28 /* PhotoViewController.swift */,
 				7927542A264B2B07007F5EAD /* UIViewController+alert.swift */,
 				79275436264C60F9007F5EAD /* UIView+addBorder.swift */,
 				79275438264C6128007F5EAD /* UIBarButtonItem+hide.swift */,
@@ -273,6 +279,7 @@
 				7902E13D2649EE21007C55A7 /* BuddyDetailViewController.swift in Sources */,
 				7927543F264C8384007F5EAD /* Photos.swift in Sources */,
 				79275439264C6129007F5EAD /* UIBarButtonItem+hide.swift in Sources */,
+				79A690C6264DF3850034CA28 /* BuddyPhotoCollectionViewCell.swift in Sources */,
 				79275435264BAC77007F5EAD /* Comments.swift in Sources */,
 				79275429264B152D007F5EAD /* Buddy.swift in Sources */,
 				79275433264BA881007F5EAD /* Comment.swift in Sources */,
@@ -280,6 +287,7 @@
 				7927543D264C82AF007F5EAD /* Photo.swift in Sources */,
 				79275437264C60F9007F5EAD /* UIView+addBorder.swift in Sources */,
 				7902E1252649E674007C55A7 /* SceneDelegate.swift in Sources */,
+				79A690C4264DEBC90034CA28 /* PhotoViewController.swift in Sources */,
 				7927542B264B2B07007F5EAD /* UIViewController+alert.swift in Sources */,
 				7927542D264B4743007F5EAD /* Buddies.swift in Sources */,
 			);

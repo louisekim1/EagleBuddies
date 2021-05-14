@@ -10,7 +10,8 @@ import Firebase
 import SDWebImage
 
 class BuddyDetailViewController: UIViewController {
-    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var photoCell: UICollectionViewCell!
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var yearTextField: UITextField!
@@ -110,6 +111,38 @@ class BuddyDetailViewController: UIViewController {
         memberTextField.borderStyle = .none
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        updateFromInterface()
+        switch segue.identifier ?? "" {
+        case "AddComment":
+            let navigationController = segue.destination as! UINavigationController
+            let destination = navigationController.viewControllers.first as!
+                CommentTableViewController
+            destination.buddy = buddy
+        case "ShowComment":
+            let destination = segue.destination as! CommentTableViewController
+            let selectedIndexPath = tableView.indexPathForSelectedRow!
+            destination.comment = comments.commentArray[selectedIndexPath.row]
+            destination.buddy = buddy
+        case "AddPhoto":
+            let navigationController = segue.destination as! UINavigationController
+            let destination = navigationController.viewControllers.first as!
+                PhotoViewController
+            destination.buddy = buddy
+            destination.photo = photo
+        case "ShowPhoto":
+            let destination = segue.destination as! PhotoViewController
+            guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else {
+                print("ERROR: couldn't get selected collectionView item")
+                return
+            }
+            destination.photo = photos.photoArray[selectedIndexPath.row]
+            destination.buddy = buddy
+        default:
+            print("Couldn't find a case for segue identifier \(segue.identifier). This should not have happened!")
+        }
+    }
+    
     func saveCancelAlert(title: String, message: String, segueIdentifier: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "Save", style: .default) { (_) in
@@ -156,6 +189,7 @@ class BuddyDetailViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
     
     @IBAction func nameFieldChanged(_ sender: UITextField) {
         let noSpaces = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -210,7 +244,7 @@ class BuddyDetailViewController: UIViewController {
     
     @IBAction func photoButtonPressed(_ sender: UIButton) {
         if buddy.documentID == "" {
-            saveCancelAlert(title: "This Group Hs Not Been Saved", message: "You must save this group before you can commment on it", segueIdentifier: "AddPhoto")
+            saveCancelAlert(title: "This Group Has Not Been Saved", message: "You must save this group before you can commment on it", segueIdentifier: "AddPhoto")
         } else {
             cameraOrLibraryAlert()
         }
@@ -226,6 +260,19 @@ extension BuddyDetailViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath)
         cell.textLabel?.text = comments.commentArray[indexPath.row].commentTitle
         return cell
+    }
+}
+
+extension BuddyDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photos.photoArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! BuddyPhotoCollectionViewCell
+        photoCell.buddy = buddy
+        photoCell.photo = photos.photoArray[indexPath.row]
+        return photoCell
     }
 }
 
@@ -260,7 +307,6 @@ extension BuddyDetailViewController: UIImagePickerControllerDelegate, UINavigati
         }
     }
 }
-
 
 //    func updatePictures() {
 //        if photo.documentID == "" { // This is a new photo
