@@ -14,6 +14,7 @@ class PhotoViewController: UIViewController {
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
     @IBOutlet weak var deleteBarButton: UIBarButtonItem!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     var buddy: Buddy!
     var photo: Photo!
@@ -33,7 +34,7 @@ class PhotoViewController: UIViewController {
     
     func updateUserInterface() {
         if photo.documentID == "" { // This is a new photo
-            print("This is a new photo")
+            addBorderToEditableObjects()
         } else {
             if photo.photoUserID == Auth.auth().currentUser?.uid { // photo posted by current user
                 self.navigationItem.leftItemsSupplementBackButton = false
@@ -58,6 +59,11 @@ class PhotoViewController: UIViewController {
     func updateFromUserInterface() {
         photo.image = photoImageView.image!
     }
+    
+    func addBorderToEditableObjects(){
+            descriptionTextView.addBorder(width: 0.5, radius: 5.0, color: .black)
+        }
+        
     
     func leaveViewController() {
         let isPresentingInAddMode = presentingViewController is UINavigationController

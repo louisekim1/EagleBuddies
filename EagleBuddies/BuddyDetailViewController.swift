@@ -44,8 +44,8 @@ class BuddyDetailViewController: UIViewController {
             buddy = Buddy()
         } else {
             disableTextEditing()
-            cancelBarButton.hide()
-            saveBarButton.hide()
+//            cancelBarButton.hide()
+//            saveBarButton.hide()
             navigationController?.setToolbarHidden(true, animated: true)
         }
         comments = Comments()
@@ -55,6 +55,7 @@ class BuddyDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         if buddy.documentID != "" {
             self.navigationController?.setToolbarHidden(true, animated: true)
         }
@@ -77,9 +78,9 @@ class BuddyDetailViewController: UIViewController {
         } else {
             if buddy.postingUserID == Auth.auth().currentUser?.uid  { // review posted by current user
                 self.navigationItem.leftItemsSupplementBackButton = false
-                saveBarButton.title = "Update"
+                saveBarButton.title = ""
+                // ^^FIX THIS LATER
                 addBordersToEditableObjects()
-                //     deleteBarButton.isHidden = false
             } else { // review posted by different user
                 saveBarButton.hide()
                 cancelBarButton.hide()
