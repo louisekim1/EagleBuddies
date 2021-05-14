@@ -36,6 +36,8 @@ class BuddyDetailViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
         imagePickerController.delegate = self
         
         if buddy == nil {
@@ -58,6 +60,9 @@ class BuddyDetailViewController: UIViewController {
         }
         comments.loadData(buddy: buddy) {
             self.tableView.reloadData()
+        }
+        photos.loadData(buddy: buddy) {
+            self.collectionView.reloadData()
         }
     }
     
@@ -143,8 +148,8 @@ class BuddyDetailViewController: UIViewController {
                 print("ERROR: couldn't get selected collectionView item")
                 return
             }
-            destination.photo = photos.photoArray[selectedIndexPath.row]
             destination.buddy = buddy
+            destination.photo = photos.photoArray[selectedIndexPath.row]
         default:
             print("Couldn't find a case for segue identifier \(segue.identifier). This should not have happened!")
         }
@@ -314,29 +319,3 @@ extension BuddyDetailViewController: UIImagePickerControllerDelegate, UINavigati
         }
     }
 }
-
-//    func updatePictures() {
-//        if photo.documentID == "" { // This is a new photo
-//            addBordersToEditableObjects()
-//        } else {
-//            if photo.photoUserID == Auth.auth().currentUser?.uid { // photo posted by current user
-//                self.navigationItem.leftItemsSupplementBackButton = false
-//                saveBarButton.title = "Update"
-//                addBordersToEditableObjects()
-//                self.navigationController?.setToolbarHidden(false, animated: true)
-//            } else { // photo posted by different user
-//                saveBarButton.hide()
-//                cancelBarButton.hide()
-//                descriptionTextView.isEditable = false
-//                descriptionTextView.backgroundColor = .white
-//            }
-//        }
-//        guard let url = URL(string: photo.photoURL) else {
-//            // Then this must be a new image
-//            photoImageView.image = photo.image
-//            return
-//        }
-//        photoImageView.sd_imageTransition = .fade
-//        photoImageView.sd_imageTransition?.duration = 0.5
-//        photoImageView.sd_setImage(with: url)
-//    }

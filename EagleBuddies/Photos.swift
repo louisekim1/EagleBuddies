@@ -10,7 +10,6 @@ import Firebase
 
 class Photos {
     var photoArray: [Photo] = []
-    
     var db: Firestore!
     
     init()  {

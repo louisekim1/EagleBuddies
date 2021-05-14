@@ -86,7 +86,7 @@ class Photo {
                         print("ERROR: updating document \(error!.localizedDescription)")
                         return completion(false)
                     }
-                    print("Updated document: \(self.documentID) in spot: \(buddy.documentID)") // It worked!
+                    print("Updated document: \(self.documentID) in buddy: \(buddy.documentID)") // It worked!
                     completion(true)
                 }
             }
@@ -102,7 +102,7 @@ class Photo {
     
     func loadImage(buddy: Buddy, completion: @escaping (Bool) -> ()) {
         guard buddy.documentID != "" else {
-            print("ERROR: did not pass a valid spot into loadImage")
+            print("ERROR: did not pass a valid buddy into loadImage")
             return
         }
         let storage = Storage.storage()
@@ -117,6 +117,7 @@ class Photo {
             }
         }
     }
+    
     func deleteData(buddy: Buddy, completion: @escaping(Bool) -> ()) {
         let db = Firestore.firestore()
         db.collection("buddies").document(buddy.documentID).collection("photos").document(documentID).delete { (error) in
@@ -129,6 +130,7 @@ class Photo {
             }
         }
     }
+    
     private func deleteImage(buddy: Buddy) {
         guard buddy.documentID != "" else {
             print("ERROR")

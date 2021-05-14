@@ -33,6 +33,7 @@ class PhotoViewController: UIViewController {
     
     func updateUserInterface() {
         if photo.documentID == "" { // This is a new photo
+            print("This is a new photo")
         } else {
             if photo.photoUserID == Auth.auth().currentUser?.uid { // photo posted by current user
                 self.navigationItem.leftItemsSupplementBackButton = false
@@ -41,7 +42,7 @@ class PhotoViewController: UIViewController {
             } else { // photo posted by different user
                 saveBarButton.hide()
                 cancelBarButton.hide()
-                
+                deleteBarButton.hide()
             }
         }
         guard let url = URL(string: photo.photoURL) else {
@@ -68,6 +69,14 @@ class PhotoViewController: UIViewController {
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIBarButtonItem) {
+        buddy.saveData { (success) in
+            if success {
+                self.leaveViewController()
+            } else {
+                // ERROR during save occured
+                self.oneButtonAlert(title: "😡 Save Failed", message: "For some reason, the data would not save to the cloud.")
+            }
+        }
         photo.deleteData(buddy: buddy) { (success) in
             if success {
                 self.leaveViewController()
@@ -83,6 +92,14 @@ class PhotoViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         updateFromUserInterface()
+        buddy.saveData { (success) in
+            if success {
+                self.leaveViewController()
+            } else {
+                // ERROR during save occured
+                self.oneButtonAlert(title: "😡 Save Failed", message: "For some reason, the data would not save to the cloud.")
+            }
+        }
         photo.saveData(buddy: buddy) { (success) in
             if success {
                 self.leaveViewController()
