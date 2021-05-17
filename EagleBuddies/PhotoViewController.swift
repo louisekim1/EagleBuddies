@@ -61,9 +61,8 @@ class PhotoViewController: UIViewController {
     }
     
     func addBorderToEditableObjects(){
-            descriptionTextView.addBorder(width: 0.5, radius: 5.0, color: .black)
-        }
-        
+        descriptionTextView.addBorder(width: 0.5, radius: 5.0, color: .black)
+    }
     
     func leaveViewController() {
         let isPresentingInAddMode = presentingViewController is UINavigationController

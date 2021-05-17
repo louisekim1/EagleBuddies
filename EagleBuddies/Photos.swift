@@ -1,6 +1,6 @@
 //
 //  Photos.swift
-//  Snacktacular
+//  EagleBuddies
 //
 //  Created by Louise Kim on 4/25/21.
 //

@@ -14,7 +14,6 @@ class CommentTableViewController: UITableViewController {
     @IBOutlet weak var commentField: UITextField!
     @IBOutlet weak var wantToConnectField: UITextField!
     @IBOutlet weak var socialMediaField: UITextField!
-    @IBOutlet weak var postedByLabel: UILabel!
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIButton!
     
@@ -55,7 +54,6 @@ class CommentTableViewController: UITableViewController {
             } else { // review posted by different user
                 saveBarButton.hide()
                 cancelBarButton.hide()
-                postedByLabel.text = "Posted by: \(comment.reviewUserEmail)"
             }
             commentTitleField.isEnabled = false
             commentTitleField.borderStyle = .none

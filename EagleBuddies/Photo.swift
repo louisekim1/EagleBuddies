@@ -1,6 +1,6 @@
 //
 //  Photo.swift
-//  Snacktacular
+//  EagleBuddies
 //
 //  Created by Louise Kim on 4/25/21.
 //
@@ -14,7 +14,7 @@ class Photo {
     var photoUserEmail: String
     var photoURL: String
     var documentID: String
-    
+
     var dictionary: [String: Any] {
         return ["photoUserID": photoUserID, "photoUserEmail": photoUserEmail, "photoURL": photoURL]
     }
@@ -25,6 +25,7 @@ class Photo {
         self.photoUserEmail  = photoUserEmail
         self.photoURL = photoURL
         self.documentID = documentID
+        
     }
     
     convenience init() {
